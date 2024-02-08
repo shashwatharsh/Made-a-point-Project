@@ -40,7 +40,7 @@ const Header = () => {
   handleStickyHeader()
 
   return ()=> window.removeEventListener('scroll', handleStickyHeader)
- });
+ }, []);
 
  const toggleMenu = () =>{
   menuRef.current.classList.toggle('show_menu')

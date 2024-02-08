@@ -84,7 +84,7 @@ const quickLinks03 = [
 ];
 
 const Footer = () => {
-  const year = new Date().getFullYear;
+  const year = new Date().getFullYear();
   return (
     <footer
       className="pb-16 p-10"

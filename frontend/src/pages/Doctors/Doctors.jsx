@@ -23,7 +23,7 @@ const Doctors = () => {
       <section>
         <div className="container">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
-            {doctors.map((doctor, index) => (
+            {doctors.map(doctor => (
               <DoctorCard key={doctor.id} doctor={doctor} />
             ))}
           </div>
@@ -34,7 +34,10 @@ const Doctors = () => {
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
             <h2 className="heading  text-center">What our Pateints Says:</h2>
-            <p className="text_para text-center ">World-Class care for Everyone. Our health System offers Unmatched, experts health Care. </p>
+            <p className="text_para text-center ">
+              World-Class care for Everyone. Our health System offers Unmatched,
+              experts health Care.{" "}
+            </p>
           </div>
           <Testimonial />
         </div>
