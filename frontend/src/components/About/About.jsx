@@ -1,7 +1,9 @@
 import React from "react";
 import aboutImg from "../../assets/images/about.png";
-import aboutCardImg from "../../assets/images/about-card.png";
+import aboutCardImg from "../../assets/images/dr3.png";
 import { Link } from "react-router-dom";
+import drimg from "../../assets/images/Dr_mam.png"
+import mamP from "../../assets/images/mam_crp.jpeg"
 
 const About = () => {
   return (
@@ -10,7 +12,7 @@ const About = () => {
         <div className="flex justify-between gap-[50px] lg:gap-[130px] xl:gap-0 flex-col lg:flex-row ">
           {/* Dra anu image  */}
           <div className="relative w-3/4 lg:w-1/2 xl:w-[770px] z-10 order-2 lg:order-1">
-            <img src={aboutImg} alt="Dr Anuradha " />
+            <img src={mamP} alt="Dr Anuradha " className="rounded-xl"/>
             <div className="absolute z-20 bottom-4 w-[200px] md:w-[300px] right-[-30%] md:right-[-7%] lg:right-[22%]">
               <img src={aboutCardImg} alt="Dr Anuradha card" />
             </div>
@@ -18,25 +20,34 @@ const About = () => {
           {/* Content about Dr Anuradha */}
           <div className="w-full lg:w-1/2 xl:w-[670px] order-1 lg:order-2">
             <h2 className="heading">
-              Serived more than 10000+ patients problem.
+            Dr Anuradha & Clinic
             </h2>
             <p className="text_para">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt
-              asperiores repellendus vel adipisci aliquam. Dolore magni
-              asperiores aliquid necessitatibus! Asperiores, repudiandae
-              possimus expedita dolor ducimus officia voluptates itaque quae
-              sunt sit placeat. Rem explicabo nam aliquam eaque alias, libero
-              assumenda.
+              Dr. Anuradha&#39;s Multispecialty Dental Clinic is a state of art
+              modern dental clinic run by a renowned and experienced Dental
+              Specialist. The clinic is hygienic and equipped with two state of
+              art dental chairs, Latest portable X- Ray Machine, Digital X Rays
+              (Radiovisiography), Fibro-optic hand pieces and Ultrasonic
+              scalers, Electronic Apex locators ,Endomotors, Ultrasonic
+              instrument cleaner and Autoclaves for certified sterilization .
+              Very high quality imported dental materials are utilised for the
+              patient treatment.
             </p>
             <p className="text_para mt-[30px] ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-              ipsum tempora quam atque nemo officiis aut omnis. Debitis et
-              laboriosam, accusamus, dignissimos, illo esse ut tempora animi
-              magni repellat modi.
+              Clinic maintains total asepsis with all precautions to prevent
+              cross infection by utilizing world class sterilization protocol
+              and equipment. The Senior specialist consultants offers
+              patient-friendly, pain free professional treatment to your dental
+              problems while maintaining the highest professional and ethical
+              values. All types of dental treatment can be availed under one
+              roof as all specialists are called for different specialised
+              treatments.
             </p>
-            <Link to="/">
-              <button className="btn">Learn More</button>
-            </Link>
+            {/* <Link to="/"> */}
+            <a href="tel:09897517437">
+              <button className="btn" >Call Me</button>
+              </a>
+            {/* </Link> */}
           </div>
         </div>
       </div>

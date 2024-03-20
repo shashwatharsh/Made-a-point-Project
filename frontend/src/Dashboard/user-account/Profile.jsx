@@ -13,6 +13,7 @@ const Profile = ({ user }) => {
     name: "",
     email: "",
     password: "",
+    phone:"",
     photo: null,
     gender: "",
     bloodType: "",
@@ -21,7 +22,9 @@ const Profile = ({ user }) => {
   useEffect(() => {
     setFormData({
       name: user.name,
+      password:user.password,
       email: user.email,
+      phone: user.phone,
       photo: user.photo,
       gender: user.gender,
       bloodType: user.bloodType,
@@ -113,6 +116,16 @@ const Profile = ({ user }) => {
             placeholder="Blood Type"
             name="bloodType"
             value={formData.bloodType || ""}
+            onChange={handleInputChange}
+            className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
+          />
+        </div>
+        <div className="mb-5">
+          <input
+            type="number"
+            placeholder="Blood Type"
+            name="phone"
+            value={formData.phone || ""}
             onChange={handleInputChange}
             className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
           />

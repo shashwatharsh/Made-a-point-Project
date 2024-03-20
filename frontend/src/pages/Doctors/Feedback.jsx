@@ -4,7 +4,7 @@ import { formateDate } from "../../utils/formateDate";
 import { AiFillStar } from "react-icons/ai";
 import FeedbackForm from "./FeedbackForm";
 
-const Feedback = () => {
+const Feedback = ({ reviews, totalRating}) => {
 
     const[showFeedbackForm, setShowFeedbackForm] = useState(false);
 
@@ -12,36 +12,40 @@ const Feedback = () => {
     <div>
       <div className="mb-[50px]">
         <h4 className="text-[20px] leading-[30px] font-bold text-headingColor mb-[30px]">
-          All reviews (272)
+          All reviews ({totalRating})
         </h4>
-        <div className="flex justify-between gap-10 mb-[30px]">
-          <div className="flex gap-3">
-            <figure className="w-10 h-10 rounded-full">
-              <img className="w-full" src={avatar} alt="" />
-            </figure>
-            <div className="">
-              <h5 className=" text-[16px] leading-6  text-primaryColor">
-                Tapesh Dashila{" "}
-              </h5>
-              <p className="text-[14px] leading-6 text-textColor">
-                {formateDate("02-14-2023")}
-              </p>
-              <p className=" text_para mt-3 font-medium text-[15px]">
-                Good Service, highly Reccomended
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-1">
-            {[...Array(5).keys()].map((_, index) => (
-              <AiFillStar key={index} color="#0067FF" />
-            ))}
-          </div>
-        </div>
+        { reviews?.map((review,index)=>{
+             <div key={index} className="flex justify-between gap-10 mb-[30px]">
+             <div className="flex gap-3">
+               <figure className="w-10 h-10 rounded-full">
+                 <img className="w-full" src={review.user?.photo ? review.user?.photo :avatar} alt="" />
+               </figure>
+               <div className="">
+                 <h5 className=" text-[16px] leading-6  text-primaryColor">
+                   {review?.user?.name}
+                 </h5>
+                 <p className="text-[14px] leading-6 text-textColor">
+                   {formateDate(review?.createdAt)}
+                 </p>
+                 <p className=" text_para mt-3 font-medium text-[15px]">
+                   { review.reviewText }
+                 </p>
+               </div>
+             </div>
+             <div className="flex gap-1">
+               {[...Array(review?.rating).keys()].map((_, index) => (
+                 <AiFillStar key={index} color="#0067FF" />
+               ))}
+             </div>
+           </div>
+        })}
       </div>
+      <a href="https://search.google.com/local/reviews?placeid=ChIJi81-zuIrCTkRyCIJtmvDA_o&q=Dr+Anuradha%27s+Multispeciality+Dental+Clinic&hl=en&gl=IN" target="_blank">
       {!showFeedbackForm && <div className="text-center">
         <button className="btn" onClick={()=> setShowFeedbackForm(true)}>Give Feedback</button>
         </div>
         }
+        </a>
 
         {showFeedbackForm && <FeedbackForm />}
     </div>

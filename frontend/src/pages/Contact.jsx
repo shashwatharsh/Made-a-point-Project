@@ -1,6 +1,56 @@
-import React from "react";
+import {useState} from "react";
+import { BASE_URL } from "../config";
+import { toast } from "react-toastify";
 
 const Contact = () => {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+
+
+  // Function to handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`${BASE_URL}/contactus`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      // Clear form data upon successful submission
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+
+      // Optionally, display a success message to the user
+      // console.log("Form submitted successfully");
+      toast.message("Form submitted successFully");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Optionally, display an error message to the user
+    }
+  };
+
+
   return (
     <section>
       <div className="px-4 mx-auto max-w-screen-md">
@@ -9,7 +59,7 @@ const Contact = () => {
           Got a technical Issur ? Want to send Feedback about our beta Feature?
           Let us know.
         </p>
-        <form action="" className="space-y-8">
+        <form onSubmit={handleSubmit} className="space-y-8">
           <div className="">
             <label htmlFor="email" className="form_label">
               Your Email
@@ -17,18 +67,24 @@ const Contact = () => {
             <input
               type="email"
               id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="example@gmail.com"
               className="form_input mt-1"
             />
           </div>
           <div className="">
             <label htmlFor="subject" className="form_label">
-              Subject
+              Name
             </label>
             <input
               type="text"
-              id="subject"
-              placeholder="Let us know how can we Help You"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your name."
               className="form_input mt-1"
             />
           </div>
@@ -40,7 +96,10 @@ const Contact = () => {
             rows="6"
               type="text"
               id="message"
-              placeholder="Leave a comment....."
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Leave a comment..... you can drop your phone number or directly call us by google map or whatsapp us."
               className="form_input mt-1"
             />
           </div>

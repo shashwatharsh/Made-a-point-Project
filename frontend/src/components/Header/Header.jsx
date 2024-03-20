@@ -1,5 +1,8 @@
 import { useEffect, useRef, useContext } from "react";
 import logo from "../../assets/images/logo.png";
+import logo1 from "../../assets/images/logoRg2.png";
+import logo2 from "../../assets/images/logoReady.png";
+import avatar from "../../assets/images/avatar-icon.png"
 
 import { NavLink, Link } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
@@ -12,7 +15,7 @@ const navData = [
   },
   {
     path: "/doctors",
-    display: "Find a Doctor",
+    display: "Book Appointment",
   },
   {
     path: "/services",
@@ -57,7 +60,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Dr Anuradha's Clinic logo will be here  */}
           <div className="">
-            <img src={logo} alt="Dr Anuradha" />
+            <img src={logo1} alt="Dr Anuradha" />
           </div>
 
           {/* main menu */}
@@ -81,7 +84,7 @@ const Header = () => {
           </div>
 
           {/* right  */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 bg-red-300 rounded-xl">
             {token && user ? (
               <div>
                 <Link
@@ -91,12 +94,13 @@ const Header = () => {
                       : "/user/profile/me"
                   }`}
                 >
-                  <figure className="w-[35px] h-[35px] rounded-full cursor-pointer">
+                  <figure className="w-[35px] h-[35px] rounded-full cursor-pointer ">
                     <img
-                      src={user?.photo}
+                      src={user?.photo ?user?.photo : avatar }
                       className="w-full rounded-full"
-                      alt=""
+                      alt="Profile"
                     />
+
                   </figure>
 
                 </Link>
@@ -108,7 +112,6 @@ const Header = () => {
                 </button>
               </Link>
             )}
-
             <span className="md:hidden" onClick={toggleMenu}>
               <BiMenu className="w-6 h-6 cursor-pointer " />
             </span>

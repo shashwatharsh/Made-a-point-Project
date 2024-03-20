@@ -16,15 +16,22 @@ const Signup = () => {
     name:'',
     email: "",
     password: "",
+    phone:"",
     photo:'',
     gender:'',
     role:'patient',
   });
+  // for confirming password
+  const [conformPsw, setConformPsw] = useState("")
   
   const navigate = useNavigate()
 
   const handleInputChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  };
+  const handlepswChange = e => {
+    setConformPsw( e.target.value );
 
   };
   const handleFileInputChange = async Event => {
@@ -42,6 +49,9 @@ const Signup = () => {
     setLoading(true);
 
     try{
+      if (formData.password !== conformPsw) {
+        throw new Error("Passwords do not match");
+      }
       const res = await fetch(`${BASE_URL}/auth/register`,{
         method:'post',
         headers:{
@@ -107,9 +117,35 @@ const Signup = () => {
               <div className="mb-5">
                 <input
                   type="password"
+                  min="6"
                   placeholder="Password"
                   name="password"
                   value={formData.password}
+                  onChange={handleInputChange}
+                  className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
+                  required
+                />
+              </div>
+              {/* forget password */}
+              <div className="mb-5">
+                <input
+                  type="password"
+                  min="6"
+                  placeholder="Confirm Password"
+                  name="conformPsw"
+                  value={conformPsw}
+                  onChange={handlepswChange}
+                  // onChange={handleInputChange}
+                  className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
+                  required
+                />
+              </div>
+              <div className="mb-5">
+                <input
+                  type="number"
+                  placeholder="Phone number"
+                  name="phone"
+                  value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
                   required

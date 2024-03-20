@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logoRg2.png";
+
 // import { RiLinkedinFill } from "react-icons/ri";
 import {
   AiFillYoutube,
@@ -81,6 +82,10 @@ const quickLinks03 = [
     path: "/contact",
     display: "Contact Us",
   },
+  {
+    path: "/doctors",
+    display: "About Us",
+  }
 ];
 
 const Footer = () => {
@@ -93,9 +98,9 @@ const Footer = () => {
       <div className="container" style={{ background: "" }}>
         <div className="flex justify-between flex-col md:flex-row flex-wrap gap-[30px]">
           <div className="">
-            <img src={logo} alt="" />
+            <img src={logo} alt=""  className=" bg-slate-200"/>
             <p className="text-[16px] leading-7 font-[400] text-white">
-              Copyright {year} developer by Shashwat Harsh all right reserved.
+              Developed by <a href="https://www.linkedin.com/in/shashwat-harsh/" target="_blank" className=" text-blue-500"> Shashwat Harsh </a> and <a href="https://www.linkedin.com/in/tapesh-dasila-85a4571b5/" target="_blank" className=" text-blue-500">Tapesh Dasila</a>.
             </p>
             <div className="flex items-center gap-3 mt-4">
               {socialLinks.map((link, index) => (
@@ -146,7 +151,7 @@ const Footer = () => {
           </div>
           <div className="">
             <h2 className="text-[20px] leading-[30px] font-[700] mt-6 text-white">
-              Support:
+              Contact us:
             </h2>
             <ul>
               {quickLinks03.map((items, index) => (
@@ -159,6 +164,14 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li className="mb-4">
+                  <a href="tel:9897517437" className="text-[16px] leading-7 font-[400] text-white" title="Click to call ">+91-9897517437</a>
+
+              </li>
+              <li className="mb-4">
+                  <a href="mail:dr_anuradharani@yahoo.com" className="text-[16px] leading-7 font-[400] text-white" title="Click to call ">dr_anuradharani@yahoo.com</a>
+                  
+              </li>
             </ul>
           </div>
         </div>

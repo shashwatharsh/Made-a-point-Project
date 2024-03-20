@@ -428,7 +428,7 @@ const Profile = ({ doctorData }) => {
                     <input
                       type="time"
                       name="endingTime"
-                      value={item.startingTime}
+                      value={item.endingTime}
                       className="form_input"
                       onChange={(e) => handleTimeSlotChange(e, index)}
                     />

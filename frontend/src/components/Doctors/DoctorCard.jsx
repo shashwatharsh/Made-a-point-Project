@@ -4,6 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const DoctorCard = ({ doctor }) => {
+  console.log(doctor._id)
   const {
     name,
     avgRating,
@@ -15,6 +16,10 @@ const DoctorCard = ({ doctor }) => {
   } = doctor;
 
   return (
+    <Link
+          to={`/doctors/${doctor._id}`}
+          // className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E]  flex items-center justify-center group hover:bg-primaryColor hover:border-none "
+        >
     <div className="p-3 lg:p-5">
       <div className="">
         <img src={photo} className="w-full" alt="" />
@@ -32,27 +37,28 @@ const DoctorCard = ({ doctor }) => {
             {avgRating}
           </span>
           <span className="text-[14px] leading-6 lg:text-[[16px] lg:leading-7 font-[400] text-textColor">
-            ({totalRating})
+            (32)
           </span>
         </div>
       </div>
       <div className="mt-[18px] lg:mt-5 flex justify-between">
         <div className="">
           <h3 className="texr-[16px] leading-7  lg:text-[18px] lg:leading-[30px] font-semibold text-headingColor">
-            +{totalPatient} patients
+            {/* 100+{totalPatient} patients */}
           </h3>
           <p className="text-[14px] leading-6 font-[400] text-textColor">
-            At {hospital}
+            Book appointment
           </p>
         </div>
         <Link
-          to="/doctors"
+          to={`/doctors/${doctor._id}`}
           className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E]  flex items-center justify-center group hover:bg-primaryColor hover:border-none "
         >
           <BsArrowRight className="group-hover:text-white w-6 h-5" />
         </Link>
       </div>
     </div>
+    </Link>
   );
 };
 
