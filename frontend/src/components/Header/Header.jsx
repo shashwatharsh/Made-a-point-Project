@@ -84,7 +84,7 @@ const Header = () => {
           </div>
 
           {/* right  */}
-          <div className="flex items-center gap-4 bg-red-300 rounded-xl">
+          <div className="flex items-center gap-4 bg-slate-500 shadow rounded-xl">
             {token && user ? (
               <div>
                 <Link

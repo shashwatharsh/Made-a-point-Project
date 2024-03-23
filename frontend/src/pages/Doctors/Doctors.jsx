@@ -53,7 +53,7 @@ const Doctors = () => {
           <Testimonial />
         </div>
       </section>
-      <div className="fixed bottom-14 right-14 bg-blue-500  py-2 px-4 rounded-full shadow-md">
+      <div className="fixed bottom-14 right-14 bg-[#22ba3d]  py-2 px-4 rounded-full shadow-md">
         <a href="https://wa.me/9897517437?text=I want to know more about Dr. Anuradha's Dental Clinic." target="_blank">
         <img src={walogo} alt=""  className="w-[30px] h-[30px]"/>
         </a>

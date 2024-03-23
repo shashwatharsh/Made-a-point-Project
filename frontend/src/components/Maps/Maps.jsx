@@ -12,7 +12,7 @@ const Maps = () => {
         </div>
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
-            <div className="">
+            <div className="mx-auto flex flex-col">
               <iframe
                 className="rounded-xl drop-shadow-2xl md:w-[500] lg:w-[550] sm:w-[48]"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55116.01259120381!2d77.96016600048932!3d30.301155547319528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39092be2ce7ecd8b%3A0xfa03c36bb60922c8!2sDr%20Anuradha&#39;s%20Multispeciality%20Dental%20Clinic!5e0!3m2!1sen!2sin!4v1708357626706!5m2!1sen!2sin"

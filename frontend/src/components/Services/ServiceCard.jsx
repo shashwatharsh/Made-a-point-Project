@@ -1,15 +1,20 @@
-import React from "react";
+import {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+// import rctimg from "../../assets/images/loc33.jpg";
 
 const ServiceCard = ({ item, index}) => {
-  const { name, desc, bgColor, textColor } = item;
+  const { name, desc, bgColor, textColor,img } = item;
+  // const image2 = require(`../../assets/images/${img}`).default;
+  const imagePath = `../../assets/images/${img}`;
+
   return (
-    <div className="py-[30px] px-3 lg:px-5">
-      <h2 className="text-[26px] leading-9 text-headingColor font-[700]">
+    <div className="py-[30px] px-3 lg:px-5 border rounded-xl bg-slate-50 shadow-lg hover:cursor-pointer hover:scale-105">
+      <img src={img} alt="image of tooth" className="rounded-xl mx-auto my-3" />
+      <h2 className="text-[26px] leading-9 text-headingColor font-[700] flex justify-center">
         {name}
       </h2>
-      <p className="text-[16px] leading-7 font-[400] text-textColor mt-4">
+      <p className="text-[16px] leading-7 font-[400] text-textColor mt-4 flex justify-center">
         {desc}
       </p>
       <div className="flex items-center justify-between mt-[30px]">

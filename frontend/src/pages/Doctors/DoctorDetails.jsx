@@ -64,7 +64,7 @@ const DoctorDetails = () => {
                       <img src={starIcon} alt="" /> 4.9
                     </span>
                     <span className="text-[14px] leading-5 lg:text-[16px] lg:leading-7 font-semibold text-textColor">
-                      32
+                      34
                     </span>
                   </div>
                   <p className="text_para text-[14px] leading-5 md:text-[15px] lg:max-w-[390px]">
