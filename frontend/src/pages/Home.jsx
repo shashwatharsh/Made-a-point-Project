@@ -26,14 +26,26 @@ import Testimonial from "../components/Testimonial/Testimonial";
 import { AiFillStar } from "react-icons/ai";
 import Carosel from "../components/Carosel/Carosel";
 
-const slides = [den_p3, den_p1, den_p2, den_p4];
+// carosel pics 
+import p1 from "../assets/images/caroPic/p1.jpeg"
+import p2 from "../assets/images/caroPic/p2.jpeg"
+import p3 from "../assets/images/caroPic/p3.jpeg"
+import p4 from "../assets/images/caroPic/p4.jpeg"
+import p5 from "../assets/images/caroPic/p5.jpeg"
+import p6 from "../assets/images/caroPic/p6.jpeg"
+import p7 from "../assets/images/caroPic/p7.jpeg"
+import p8 from "../assets/images/caroPic/p8.jpeg"
+import p9 from "../assets/images/caroPic/p9.jpeg"
+
+// const slides = [den_p3, den_p1, den_p2, den_p4];
+const slides =  [den_p3,p1,p2,p3,p4,p5,p6,p7,p8,p9]
 
 const Home = () => {
   return (
     <>
       {/* //  poster section */}
-      <section className="hero_section pt-[60px] 2xl:h-[800px]">
-        <div className="container">
+      <section className="hero_section pt-[60px] 2xl:h-[1400px]">
+        <div className="container 2xl:h-[1300px]">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
             {/* poster content */}
             <div className="">
@@ -76,8 +88,34 @@ const Home = () => {
               </div>
             </div> */}
           </div>
-          <div className="flex flex-row my-16 items-center justify-around flex-wrap">
-            <div className=" flex flex-col-reverse justify-between items-center flex-wrap">
+
+
+          <div
+          className=" 2xl:h-[1200px]"
+          //  className="flex flex-row my-16 items-center justify-around flex-wrap"
+           >
+            
+
+            {/* carosel code */}
+            <div 
+            // className="max-w-lg flex items-center  my-6 rounded-lg"
+            className="max-w-[1400px] 2xl:h-[1075px] w-full m-auto py-16 px-4 relative"
+            >
+              <Carosel key="unique-carousel-key">
+                {slides.map((s, index) => (
+                  <img
+                    key={index}
+                    src={s}
+                    className="w-full"
+                    alt="hero Image"
+                  />
+                ))}
+              </Carosel>
+
+              
+            </div>
+            
+            <div className=" flex flex-row-reverse justify-center items-center flex-wrap">
               <div className="">
                 <Link to="/doctors">
                   <button className="btn">Request an Appointment</button>
@@ -110,18 +148,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="max-w-lg flex items-center  my-6 rounded-lg">
-              <Carosel key="unique-carousel-key">
-                {slides.map((s, index) => (
-                  <img
-                    key={index}
-                    src={s}
-                    className="w-full h-a"
-                    alt="hero Image"
-                  />
-                ))}
-              </Carosel>
-            </div>
+            
           </div>
         </div>
       </section>
@@ -135,7 +162,7 @@ const Home = () => {
           <div className="mx-auto xl:w-[470px]">
             <h2 className="heading text-center">Our Dental Services</h2>
             <p className="text_para text-center">
-              World-class care for every tooth, We maintain healty higene a very
+              World-class care for every tooth, We maintain healthy hygiene a very
               neat and clean clinic.{" "}
             </p>
           </div>

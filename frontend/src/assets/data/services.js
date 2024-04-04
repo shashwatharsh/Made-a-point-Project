@@ -46,7 +46,7 @@ export const services = [
     desc: "Transform Your Oral Health with Surgical Endodontics",
     bgColor: "rgba(254, 182, 13, .2)",
     textColor: "#FEB60D",
-    img:implant,
+    img:rct1,
   },
   {
     name: "Crown and Bridges",
@@ -79,7 +79,7 @@ export const services = [
     desc: "Time to flaunt that smile",
     bgColor: "rgba(151, 113, 255, .2)",
     textColor: "#9771FF",
-    img:orthodontic_braces,
+    img:orthodontic_braces, 
   }, {
     name: "Diastema",
     desc: "Bridging the Gap",
@@ -98,14 +98,14 @@ export const services = [
     desc: "For your child’s dental health",
     bgColor: "rgba(151, 113, 255, .2)",
     textColor: "#9771FF",
-    img:rct12,
+    img:removable_pd,
   },
   {
     name: "Dentures",
     desc: "Know the right type of denture for you.",
     bgColor: "rgba(151, 113, 255, .2)",
     textColor: "#9771FF",
-    img:removable_pd,
+    img:removable_dentures,
   },
   {
     name: "Root Canal Treatment",

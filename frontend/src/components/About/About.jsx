@@ -20,7 +20,7 @@ const About = () => {
           {/* Content about Dr Anuradha */}
           <div className="w-full lg:w-1/2 xl:w-[670px] order-1 lg:order-2">
             <h2 className="heading">
-            Working Process
+            About Clinic
             </h2>
             <p className="text_para">
               Dr. Anuradha&#39;s Multispecialty Dental Clinic is a state of art
